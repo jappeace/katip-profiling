@@ -8,6 +8,7 @@ import Katip
 import Control.Exception
 import System.IO(stdout)
 import Data.Text(Text)
+import Katip.Monadic(katipSetContext)
 
 main :: IO ()
 main = do
@@ -23,6 +24,6 @@ someContext = "yy"
 
 logLoop :: KatipContextT IO ()
 logLoop = do
-  katipAddContext (sl "xx" someContext) $ do
+  katipSetContext "xx" someContext $ do
       $(logTM) InfoS "Hello Katip"
       logLoop

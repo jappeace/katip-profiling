@@ -14,9 +14,15 @@
   outputs = { self, nixpkgs, flake-compat }:
     let
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      result = (builtins.fetchGit {
+                     url = "git@github.com:jappeace/katip";
+                     rev = "8d61d9d8973c9448be9c20fa7a4a92605b1e92f2";
+                     ref = "dont-leak-context";
+                  });
       hpkgs = pkgs.haskellPackages.override {
         overrides = hnew: hold: {
           katip-profiling = hnew.callCabal2nix "katip-profiling" ./. { };
+          katip  = (hold.callCabal2nix "katip" "${result}/katip"  {});
         };
       };
     in
