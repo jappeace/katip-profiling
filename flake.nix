@@ -16,15 +16,15 @@
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       hpkgs = pkgs.haskellPackages.override {
         overrides = hnew: hold: {
-          template-project = hnew.callCabal2nix "template-project" ./. { };
+          katip-profiling = hnew.callCabal2nix "katip-profiling" ./. { };
         };
       };
     in
     {
-      defaultPackage.x86_64-linux =  hpkgs.template-project;
+      defaultPackage.x86_64-linux =  hpkgs.katip-profiling;
       inherit pkgs;
       devShell.x86_64-linux = hpkgs.shellFor {
-        packages = ps : [ ps."template-project" ];
+        packages = ps : [ ps."katip-profiling" ];
         withHoogle = false;
 
         buildInputs = [
