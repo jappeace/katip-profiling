@@ -53,3 +53,11 @@ brittany_:
 
 hoogle:
 	hoogle server --local -p 8080
+
+profile:
+		rm -f exe.hp
+		cabal run --enable-library-profiling
+
+profile-view:
+		eventlog2html ./exe.eventlog
+	  firefox ./exe.eventlog.html

@@ -31,6 +31,7 @@
           hpkgs.haskell-language-server
           pkgs.ghcid
           pkgs.cabal-install
+          hpkgs.eventlog2html
         ];
       };
     };
