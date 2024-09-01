@@ -75,6 +75,6 @@ executable exe
   build-depends:
       katip-profiling
   ghc-options: -Wno-unused-packages
-               "-with-rtsopts=-N -p -s -hc -K1K -M500M -l"
+               "-with-rtsopts=-N -p -s -hc -K1K -M200M -l"
                -fprof-auto
                -prof

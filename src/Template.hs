@@ -8,7 +8,6 @@ import Katip
 import Control.Exception
 import System.IO(stdout)
 import Data.Text(Text)
-import Katip.Monadic(katipSetContext)
 
 main :: IO ()
 main = do
