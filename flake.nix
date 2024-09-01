@@ -16,7 +16,7 @@
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       result = (builtins.fetchGit {
                      url = "git@github.com:jappeace/katip";
-                     rev = "c29f79e85e25611409d40648e392413390e0ef8a";
+                     rev = "3e121012a9989a1f98f08b6f834a385afb477a50";
                      ref = "dont-leak-context";
                   });
       hpkgs = pkgs.haskellPackages.override {
